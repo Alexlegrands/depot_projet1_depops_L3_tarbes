@@ -16,8 +16,24 @@ pipeline {
                     echo "Skip Running Test Case? : ${params.SKIP_TEST}"
                     echo "Branch choice : ${params.BRANCH}"
                     echo "Sonar password : ${params.SONAR_SERVER_PWD}"
-                }
+               }
+                      
+         }
+          stage('BUILD') {
+            steps {
+                echo 'Developpement'
             }
         }
-   }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('DEPLOY') {
+            steps {
+                echo 'Mise en Production'
+            }
+        }
+        }
+     }
 }
